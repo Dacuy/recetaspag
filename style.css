@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.tituloh2{
+    color: #fff;
+    font-size: 60px;
+    margin-top: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+body{
+    color: #fff;
+    background-image: url('background.jpeg');
+}
+.containerresultado{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    transition: .5s;
+}
+.containerresultado .container1{
+    transition: .5s;
+    color: #fff;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+.containerresultado .container1 .form-control{
+    background-color: transparent;
+    color: white;
+    border-radius: 16px;
+}
+.form-control::placeholder{
+    color: rgba(255, 255, 255, 0.459);
+    text-align: center;
+}
+.labelpdf{
+    text-align: center;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.containerresultado .container1 .btn{
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: white;
+    width: 100px;
+    margin-top: 15px;
+    transition: .5s;
+}
+.containerresultado .container1 .btn:hover{
+    background-color: white;
+    color: black;
+}
+.spanrecetas{
+    margin-left: 5px;
+    position: absolute;
+    top: 125px;
+    left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 45px;
+    animation: opacidad 5s;
+
+}
+.spanmeli{
+    position: absolute;
+    top: 125px;
+    right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 45px;
+    animation: opacidad 5s;
+}
+@keyframes opacidad {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0;
+    }
+    15%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    35%{
+        opacity: 0;
+    }
+}
+.containerresultadoul{
+    display: flex;
+    align-items: center;
+    transition: .5s;
+}
+.resultadoul{
+    transition: .5s;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, .5);
+}
+.resultadoul li{
+    width: 100%;
+    list-style: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    transition: .5s;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-top: 220px;
+}
+@media (max-width: 375px){
+    .spanmeli{
+        right: 0px;
+        font-size: 42px;
+    }
+    .spanrecetas{
+        left: 0px;
+        font-size: 42px;
+    }
+}

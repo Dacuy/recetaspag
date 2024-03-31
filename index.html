@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Familiares</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2 class="d-flex justify-content-center tituloh2">Recetas Familiares</h2>
+        <div class="containerresultado">
+            <div class="container1 container d-flex justify-content-center">
+                <div class="row">
+                    <div class="labelpdf col-12 d-flex justify-content-center"><label>Buscar "PDF" para obtener pdf con más recetas</label></div>
+                    <div class="col-12 d-flex justify-content-center"><input type="text" id="formulario" class="form-control" placeholder="Busca las recetas aqui"></div>
+                    <div class="col-12 d-flex justify-content-center"><div class="divboton"><button class="btn btn-info" id="boton">Buscar</button></div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerresultado"><ul class="resultadoul" id="resultado">
+            <li></li>
+            </ul></div>
+    </main>
+    <footer class="footer"><h4>Recetas Familiares Todos los derechos a los dueños de las imagenes utilizadas en este sitio web.</h4></footer>
+    <!-- INICIO SCRIPT BUSCADOR BOTON INPUT JAVASCRIPT-->
+    <script>
+        const productos = [
+            {nombre: 'Alfajores de Maizena', valor: `<a href="./HTMLRECETAS/alfajoresmaizena.html">Receta</a>`},
+            {nombre: 'Budin de Pan', valor: `<a href="./HTMLRECETAS/budindepan.html">Receta</a>`},
+            {nombre: 'Barquilos para helado crocantes', valor: `<a href="./HTMLRECETAS/barquilloshelado.html">Receta</a>`},
+            {nombre: 'Croissants', valor: `<a href="./HTMLRECETAS/croissants.html">Receta</a>`},
+            {nombre: 'Coquitos', valor: `<a href="./HTMLRECETAS/coquitos.html">Receta</a>`},
+            {nombre: 'Crema Pastelera', valor: `<a href="./HTMLRECETAS/cremapastelera.html">Receta</a>`},
+            {nombre: 'Crema Pastelera 2', valor: `<a href="./HTMLRECETAS/cremapastelera2.html">Receta</a>`},
+            {nombre: 'Cheesecake', valor: `<a href="./HTMLRECETAS/cheesecake.html">Receta</a>`},
+            {nombre: 'Escones de queso Washi', valor: `<a href="./HTMLRECETAS/esconesquesowashi.html">Receta</a>`},
+            {nombre: 'Fondue', valor: `<a href="./HTMLRECETAS/fondue.html">Receta</a>`},
+            {nombre: 'Filloas', valor: `<a href="./HTMLRECETAS/filloas.html">Receta</a>`},
+            {nombre: 'Faina Relleno', valor: `<a href="./HTMLRECETAS/fainarelleno.html">Receta</a>`},
+            {nombre: 'Faina de choclo', valor: `<a href="./HTMLRECETAS/fainachoclo.html">Receta</a>`},
+            {nombre: 'Muffins de queso', valor: `<a href="./HTMLRECETAS/muffinsqueso.html">Receta</a>`},
+            {nombre: 'Malfatti', valor: `<a href="./HTMLRECETAS/malfatti.html">Receta</a>`},
+            {nombre: 'Ñoquis', valor: `<a href="./HTMLRECETAS/ñoquis.html">Receta</a>`},
+            {nombre: 'Mousse Chocolate', valor: `<a href="./HTMLRECETAS/moussechocolate.html">Receta</a>`},
+            {nombre: 'Macarrones con queso', valor: `<a href="./HTMLRECETAS/macarronesconqueso.html">Receta</a>`},
+            {nombre: 'Ojitos', valor: `<a href="./HTMLRECETAS/ojitos.html">Receta</a>`},
+            {nombre: 'Pizza de Leo', valor: `<a href="./HTMLRECETAS/pizzaleo.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pancitos de la Abuela', valor: `<a href="./HTMLRECETAS/pancitosabuela.html">Receta</a>`},
+            {nombre: 'Pan de maiz', valor: `<a href="./HTMLRECETAS/pandemaiz.html">Receta</a>`},
+            {nombre: 'Pan de sandwich', valor: `<a href="./HTMLRECETAS/pandesandwich.html">Receta</a>`},
+            {nombre: 'Pan de queso y ajo', valor: `<a href="./HTMLRECETAS/panquesoyajo.html">Receta</a>`},
+            {nombre: 'Pionono 2', valor: `<a href="./HTMLRECETAS/pionono2.html">Receta</a>`},
+            {nombre: 'Pasta de choclo', valor: `<a href="./HTMLRECETAS/pastadechoclo.html">Receta</a>`},
+            {nombre: 'Pan de calabaza', valor: `<a href="./HTMLRECETAS/pancalabaza.html">Receta</a>`},
+            {nombre: 'Pionono de Vicky', valor: `<a href="./HTMLRECETAS/piononovicky.html">Receta</a>`},
+            {nombre: 'Pascualina', valor: `<a href="./HTMLRECETAS/pascualina.html">Receta</a>`},
+            {nombre: 'Pan con grasa', valor: `<a href="./HTMLRECETAS/pancongrasa.html">Receta</a>`},
+            {nombre: 'Pan de queso', valor: `<a href="./HTMLRECETAS/pandequeso.html">Receta</a>`},
+            {nombre: 'Pie de manzana', valor: `<a href="./HTMLRECETAS/piemanzana.html">Receta</a>`},
+            {nombre: 'Pan lactal Casero', valor: `<a href="./HTMLRECETAS/panlactal.html">Receta</a>`},
+            {nombre: 'Pancitos saborizados de salame', valor: `<a href="./HTMLRECETAS/pancitossalame.html">Receta</a>`},
+            {nombre: 'Salsa agridulce', valor: `<a href="./HTMLRECETAS/salsaagridulce.html">Receta</a>`},
+            {nombre: 'Pan de Ajo', valor: `<a href="./HTMLRECETAS/pandeajo.html">Receta</a>`},
+            {nombre: 'Pan de queso air fryer', valor: `<a href="./HTMLRECETAS/panquesoair.html">Receta</a>`},
+            {nombre: 'Crema de vainilla', valor: `<a href="./HTMLRECETAS/cremapostre.html">Receta</a>`},
+            {nombre: 'Pancitos pequeños', valor: `<a href="./HTMLRECETAS/pancitospequeños.html">Receta</a>`},
+            {nombre: 'Mugcake Chocoalmendras', valor: `<a href="./HTMLRECETAS/mugcakechocoalmendras.html">Receta</a>`},
+            {nombre: 'Gofres de queso (Keto)', valor: `<a href="./HTMLRECETAS/gofresquesoketo.html">Receta</a>`},
+            {nombre: 'Pan de sandwich en taza (Linaza)', valor: `<a href="./HTMLRECETAS/pansandwichtaza.html">Receta</a>`},
+            {nombre: 'Budin de chocolate y almendras', valor: `<a href="./HTMLRECETAS/budinchocoalmendras.html">Receta</a>`},
+            {nombre: 'Pan de queso sin gluten', valor: `<a href="./HTMLRECETAS/panquesonogluten.html">Receta</a>`},
+            {nombre: 'Torta Brownie', valor: `<a href="./HTMLRECETAS/tortabrownie.html">Receta</a>`},
+            {nombre: 'Torta de peras', valor: `<a href="./HTMLRECETAS/tortaperas.html">Receta</a>`},
+            {nombre: 'Pan de Coco', valor: `<a href="./HTMLRECETAS/pancoco.html">Receta</a>`},
+            {nombre: 'Torta de manzana', valor: `<a href="./HTMLRECETAS/tortamanzana.html">Receta</a>`},
+            {nombre: 'Pan de queso de harina de almendras', valor: `<a href="./HTMLRECETAS/panquesoalmendras.html">Receta</a>`},
+            {nombre: 'Muffin de chocolate saludable', valor: `<a href="./HTMLRECETAS/muffinchoco.html">Receta</a>`},
+            {nombre: 'Tarta de queso / pizza', valor: `<a href="./HTMLRECETAS/tartaquesopizza.html">Receta</a>`},
+            {nombre: 'Pan casero brasilero', valor: `<a href="./HTMLRECETAS/pancaserobrasilero.html">Receta</a>`},
+            {nombre: 'Torta de Zanahoria', valor: `<a href="./HTMLRECETAS/tortazanahoria.html">Receta</a>`},
+            {nombre: 'Brownies', valor: `<a href="./HTMLRECETAS/brownies.html">Receta</a>`},
+            {nombre: 'Budin de Peras', valor: `<a href="./HTMLRECETAS/budinperas.html">Receta</a>`},
+            {nombre: 'Budin Ingles', valor: `<a href="./HTMLRECETAS/budiningles.html">Receta</a>`},
+            {nombre: 'Brownies Receta Mili', valor: `<a href="./HTMLRECETAS/brownies2.html">Receta</a>`},
+            {nombre: 'Donas', valor: `<a href="./HTMLRECETAS/donuts.html">Receta</a>`},
+            {nombre: 'Galletas con chispas de chocolate', valor: `<a href="./HTMLRECETAS/galletaschispas.html">Receta</a>`},
+            {nombre: 'Torta de zanahoria sin gluten', valor: `<a href="./HTMLRECETAS/tortazanahorianogluten.html">Receta</a>`},
+            {nombre: 'Pan de pita', valor: `<a href="./HTMLRECETAS/pandepita.html">Receta</a>`},
+            {nombre: 'Tostinis', valor: `<a href="./HTMLRECETAS/tostinis.html">Receta</a>`},
+            {nombre: 'Bruschetta', valor: `<a href="./HTMLRECETAS/bruschetta.html">Receta</a>`},
+            {nombre: 'Lehmeyun', valor: `<a href="./HTMLRECETAS/lehmeyun.html">Receta</a>`},
+            {nombre: 'Galletitas Crocantes', valor: `<a href="./HTMLRECETAS/galletitascrocantes.html">Receta</a>`},
+            {nombre: 'Ñoquis de espinaca', valor: `<a href="./HTMLRECETAS/ñoquisespinaca.html">Receta</a>`},
+            {nombre: 'Sorrentinos', valor: `<a href="./HTMLRECETAS/sorrentinos.html">Receta</a>`},
+            {nombre: 'Masa para ravioles', valor: `<a href="./HTMLRECETAS/masaravioles.html">Receta</a>`},
+            {nombre: 'Tallarines', valor: `<a href="./HTMLRECETAS/tallarines.html">Receta</a>`},
+            {nombre: 'Glasé Real', valor: `<a href="./HTMLRECETAS/glasereal.html">Receta</a>`},
+            {nombre: 'Scones de choclo y panceta', valor: `<a href="./HTMLRECETAS/sconeschoclopanceta.html">Receta</a>`},
+            {nombre: 'Tarta de cebollas', valor: `<a href="./HTMLRECETAS/tartacebollas.html">Receta</a>`},
+            {nombre: 'Ñoquis de Papa 2', valor: `<a href="./HTMLRECETAS/ñoquispapa.html">Receta</a>`},
+            {nombre: 'Arroz Con Espinaca', valor: `<a href="./HTMLRECETAS/arrozespinaca.html">Receta</a>`},
+            {nombre: 'Lemeyun', valor: `<a href="./HTMLRECETAS/lemeyun.html">Receta</a>`},
+            {nombre: 'Masa de Pasta', valor: `<a href="./HTMLRECETAS/masapasta.html">Receta</a>`},
+            {nombre: 'Tallarines de Espinaca', valor: `<a href="./HTMLRECETAS/tallarinesespinaca.html">Receta</a>`},
+            {nombre: 'Masa de Marianella', valor: `<a href="./HTMLRECETAS/masamarianella.html">Receta</a>`},
+            {nombre: 'Salchicón de Chocolate', valor: `<a href="./HTMLRECETAS/salchichon.html">Receta</a>`},
+            {nombre: 'Salsa de Champiniones', valor: `<a href="./HTMLRECETAS/salsachampi.html">Receta</a>`},
+            {nombre: 'Salsa de Frutas', valor: `<a href="./HTMLRECETAS/salsafrutas.html">Receta</a>`},
+            {nombre: 'Strudel de Manzana', valor: `<a href="./HTMLRECETAS/strudelmanzana.html">Receta</a>`},
+            {nombre: 'Torta Chiffon', valor: `<a href="./HTMLRECETAS/tortachiffon.html">Receta</a>`},
+            {nombre: 'Torta de Manteca Marmolada', valor: `<a href="./HTMLRECETAS/mantecamarmolada.html">Receta</a>`},
+            {nombre: 'Trufas', valor: `<a href="./HTMLRECETAS/trufas.html">Receta</a>`},
+            {nombre: 'Tarta de queso y manzana', valor: `<a href="./HTMLRECETAS/tartaquesomanzana.html">Receta</a>`},
+            {nombre: 'Tarta de Frutas', valor: `<a href="./HTMLRECETAS/tartafrutas.html">Receta</a>`},
+            {nombre: 'Torta de Manzana de Leo', valor: `<a href="./HTMLRECETAS/tortamanzanaleo.html">Receta</a>`},
+            {nombre: 'Torta de Chocolate', valor: `<a href="./HTMLRECETAS/tortachocolate.html">Receta</a>`},
+            {nombre: 'Torta de Naranja', valor: `<a href="./HTMLRECETAS/tortanaranja.html">Receta</a>`},
+            {nombre: 'Torta de Microondas', valor: `<a href="./HTMLRECETAS/tortamicro.html">Receta</a>`},
+            {nombre: 'Sushi', valor: `<a href="./HTMLRECETAS/sushi.html">Receta</a>`},
+            {nombre: 'Fainá de queso', valor: `<a href="./HTMLRECETAS/fainaqueso.html">Receta</a>`},
+            {nombre: 'Guiso de lentejas', valor: `<a href="./HTMLRECETAS/guisolentejas.html">Receta</a>`},
+            {nombre: 'Galletas con chispas 2', valor: `<a href="./HTMLRECETAS/galletaschispas2.html">Receta</a>`},
+            {nombre: 'Hamburguesas Vegetarianas', valor: `<a href="./HTMLRECETAS/vegetaburger.html">Receta</a>`},
+            {nombre: 'PDF Recetas Carpeta Azul', valor: `<a href="./recetasazul.pdf" download="./recetasazul.pdf">Receta</a>`},
+            {nombre: 'Torta Fritas SIN TACC', valor: `<a href="./HTMLRECETAS/tortasfritastacc.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+            {nombre: 'Pionono', valor: `<a href="./HTMLRECETAS/pionono.html">Receta</a>`},
+
+        ]
+        const formulario = document.querySelector('#formulario');
+        const boton = document.querySelector('#boton');
+        const resultado = document.querySelector('#resultado')
+        const filtrar = ()=>{
+            //console.log(formulario.value);
+            resultado.innerHTML = '';
+            const texto = formulario.value.toLowerCase();
+            
+            for(let producto of productos){
+                let nombre = producto.nombre.toLowerCase();
+                if(nombre.indexOf(texto) !== -1){
+                    resultado.innerHTML += `
+                    <li>${producto.nombre} -  ${producto.valor}</li>
+                    `
+                }
+            }
+
+            if(resultado.innerHTML === ''){
+                resultado.innerHTML += `
+                    <li>Receta no encontrada...</li>
+                    `
+            }
+
+        }
+        boton.addEventListener('click', filtrar);
+    </script>
+    <!-- FIN SCRIPT BUSCADOR BOTON INPUT JAVASCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--<section>
+        <header>
+            <nav>
+                <ul>
+                    <li><img class="logo" src="recetasmeli.png" width="150px"></li>
+                </ul>
+            </nav>
+        </header>
+    </section>-->
